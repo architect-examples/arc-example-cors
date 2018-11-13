@@ -10,6 +10,6 @@
   "author": "Brian LeRoux <b@brian.io>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@architect/workflows": "file:../../Repo/arc-workflows"
+    "@architect/architect": "^4.3.3"
   }
 }
