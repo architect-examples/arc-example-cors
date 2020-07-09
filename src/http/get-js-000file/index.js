@@ -1,4 +1,5 @@
-// src/http/get-index/index.js
+// src/http/get-js-000file/index.js
+
 let fs = require('fs')
 let read = file=> fs.readFileSync(`${__dirname}/${file}`).toString()
 let allow = ['index.mjs']
@@ -7,7 +8,7 @@ let cache = {}
 exports.handler = async function http(req) {
 
   // declare our content-type
-  let type = 'text/javascript; charset=utf8'
+  let type = {"content-type": "text/html"}
 
   try {
     // check for a legit file
@@ -20,14 +21,13 @@ exports.handler = async function http(req) {
       cache[file] = read(file)
 
     return {
-      type,
+      headers: type,
       status: 200,
       body: cache[file]
     }
   }
   catch(e) {
     return {
-      type,
       status: 404,
       body: `console.log("${e.message}")`
     }

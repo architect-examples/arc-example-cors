@@ -1,6 +1,6 @@
 exports.handler = async function http(req) {
   return {
-    type: 'text/html; charset=utf8',
+    headers: {"content-type": "text/html"},
     body: `
       <!doctype html>
       <html>
