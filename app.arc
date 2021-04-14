@@ -1,7 +1,8 @@
 @app
 testapp
 
+@static
+folder public
+
 @http
-get /
-get /js/:file
 get /api

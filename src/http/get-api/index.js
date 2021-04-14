@@ -1,9 +1,12 @@
-exports.handler = async function http(request) {
+let arc = require('@architect/functions')
+
+exports.handler = arc.http.async(fun)
+
+async function fun (request) {
   return {
     cors: true,
-    type: 'application/json; charset=utf8',
-    body: JSON.stringify({
+    json: {
       message: 'hello world from /api',
-    })
+    }
   }
 }
